@@ -58,8 +58,8 @@ document.addEventListener('DOMContentLoaded', function () {
   });
  
   function makeBook(bookObject) {
-    const textJudul = document.createElement('h2');
-    textJudul.innerText = bookObject.tasktitle;
+    const textTitle = document.createElement('h2');
+    textTitle.innerText = bookObject.tasktitle;
  
     const textAuthor = document.createElement('p');
     textAuthor.innerText = "Penulis : " + bookObject.taskAuthor;
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
  
     const container = document.createElement("article");
     container.classList.add("book_item");
-    container.append(textJudul, textAuthor, textYear);
+    container.append(textTitle, textAuthor, textYear);
     container.append(buttonContainer);
     container.setAttribute("id", `book-${bookObject.id}`);
  
@@ -222,3 +222,4 @@ function loadDataFromStorage() {
  
   document.dispatchEvent(new Event(RENDER_EVENT));
 }
+ 
